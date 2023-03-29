@@ -75,28 +75,30 @@ app.delete("/api/students/:contactId", async (req, res) => {
   }
 });
 
-//A put request - Update a student
-app.put("/api/students/:studentId", async (req, res) => {
+//A put request - Update a contact/edit a contact
+app.put("/api/contacts/:contactId", async (req, res) => {
   //console.log(req.params);
-  //This will be the id that I want to find in the DB - the student to be updated
-  const studentId = req.params.studentId;
-  const updatedStudent = {
+  //This will be the id that I want to find in the DB - the contact to be updated
+  const contactId = req.params.studentId;
+  const updatedContact = {
     id: req.body.id,
-    firstname: req.body.firstname,
-    lastname: req.body.lastname,
-    iscurrent: req.body.is_current,
+    name: req.body.name,
+    email: req.body.email,
+    phone: req.body.phone,
+    show: req.body.show
   };
-  console.log("In the server from the url - the student id", studentId);
+  console.log("In the server from the url - the contact id", contactId);
   console.log(
-    "In the server, from the react - the student to be edited",
-    updatedStudent
+    "In the server, from the react - the student to be edited/updated",
+    updatedContact
   );
-  // UPDATE students SET lastname = "something" WHERE id="16";
-  const query = `UPDATE students SET firstname=$1, lastname=$2, is_current=$3 WHERE id=${studentId} RETURNING *`;
+  // UPDATE contacts SET name = "something" WHERE id="16";
+  const query = `UPDATE students SET name=$1, email=$2, phone=$3, show=$4 WHERE id=${contactId} RETURNING *`;
   const values = [
-    updatedStudent.firstname,
-    updatedStudent.lastname,
-    updatedStudent.iscurrent,
+    updatedContact.name,
+    updatedContact.email,
+    updatedContact.phone,
+    updatedContact.show,
   ];
   try {
     const updated = await db.query(query, values);
@@ -110,5 +112,5 @@ app.put("/api/students/:studentId", async (req, res) => {
 
 // console.log that your server is up and running
 app.listen(PORT, () => {
-  console.log(`Hola, Server listening on ${PORT}`);
+  console.log(`Back-End Server listening on ${PORT}`);
 });
