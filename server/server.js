@@ -11,7 +11,7 @@ app.use(express.json());
 
 // creates an endpoint for the route "/""
 app.get("/", (req, res) => {
-  res.json({ message: "Hola, from My template ExpressJS with React-Vite" });
+  res.json({ message: "Hey there, this is from My template ExpressJS with React-Vite" });
 });
 
 // // create the get request for students in the endpoint '/api/students'
@@ -26,12 +26,10 @@ app.get("/", (req, res) => {
 
 // sample w cristina create the get request for students in the endpoint '/api/students'
 app.get("/api/contacts", async (req, res) => {
-  //   const contacts = [
-  //     { id: 1, firstname: "Mif", lastname: "Malik", email: "fake@fake.com" },
-  //     { id: 2, firstname: "Mif", lastname: "Malik", email: "fake@fake.com" },
-  //     { id: 3, firstname: "Mif", lastname: "Malik", email: "fake@fake.com" },
-  //   ];
-  //   res.json(contacts);
+    const contacts = [
+    {"id": 1, "name": "Ina Garden","email":"ina@foodnetwork.com","phone": 111-111-1111, "show": "Barefoot Contessa"}
+   ];
+    res.json(contacts);
 
   //need to do try & catch when calling DB this time we are connecting to SQL
   try {

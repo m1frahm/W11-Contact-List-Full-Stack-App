@@ -82,7 +82,7 @@ const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
     return (
         <Form className='form-students' onSubmit={handleSubmit}>
             <Form.Group>
-                <Form.Label>First Name</Form.Label>
+                <Form.Label>First</Form.Label>
                 <input
                     type="text"
                     id="add-user-name"
