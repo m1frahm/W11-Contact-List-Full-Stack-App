@@ -11,25 +11,47 @@ app.use(express.json());
 
 // creates an endpoint for the route "/""
 app.get("/", (req, res) => {
-  res.json({ message: "Hey there, this is from My template ExpressJS with React-Vite" });
+  res.json({
+    message: "Hey there, this is from My template ExpressJS with React-Vite",
+  });
 });
 
 // create the get request for contacts in the endpoint '/api/contacts'
-app.get('/api/contacts', async (req, res) => {
-    try {
-        const { rows: contacts } = await db.query('SELECT * FROM contacts');
-        res.send(contacts);
-    } catch (e) {
-        return res.status(400).json({ e });
-    }
+app.get("/api/contacts", async (req, res) => {
+  try {
+    const { rows: contacts } = await db.query("SELECT * FROM contacts");
+    res.send(contacts);
+  } catch (e) {
+    return res.status(400).json({ e });
+  }
 });
 
 // sample w cristina create the get request for students in the endpoint '/api/students'
 app.get("/api/contacts", async (req, res) => {
-    const contacts = [
-    {"id": 1, "name": "Ina Garden","email":"ina@foodnetwork.com","phone": 111-111-1111, "show": "Barefoot Contessa"}
-   ];
-    res.json(contacts);
+  const contacts = [
+    {
+      id: 1,
+      name: "Ina Garden",
+      email: "ina@foodnetwork.com",
+      phone: `111 - 111 - 1111`,
+      show: "Barefoot Contessa",
+    },
+    {
+      id: 2,
+      name: " Jamie Oliver",
+      email: "jame@jameoliver.com",
+      phone: `222 - 222 - 2222`,
+      show: "Jamie's One Pan Wonder's",
+    },
+    {
+      id: 3,
+      name: " Ahmed Alzahabi",
+      email: "ahmed@goldenbalance.com",
+      phone: `333 - 333 - 333`,
+      show: "The Golden Balance",
+    },
+  ];
+  res.json(contacts);
 
   //need to do try & catch when calling DB this time we are connecting to SQL
   try {
@@ -47,7 +69,7 @@ app.post("/api/contacts", async (req, res) => {
       name: req.body.name,
       email: req.body.email,
       phone: req.body.phone,
-      show: req.body.show
+      show: req.body.show,
     };
     //console.log([newContact]);
     const result = await db.query(
@@ -85,7 +107,7 @@ app.put("/api/contacts/:contactId", async (req, res) => {
     name: req.body.name,
     email: req.body.email,
     phone: req.body.phone,
-    show: req.body.show
+    show: req.body.show,
   };
   console.log("In the server from the url - the contact id", contactId);
   console.log(

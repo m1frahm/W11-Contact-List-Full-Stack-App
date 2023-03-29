@@ -16,10 +16,10 @@ const Contact = ({ contact, toUpdate, toDelete }) => {
     <Card>
       <Card.Body>
         <Card.Title>
-          {contact.name} 
+          Featured Guest: {contact.name} 
         </Card.Title>
         <Card.Title>
-          {contact.show} 
+          Name of Show: {contact.show} 
         </Card.Title>
         <Button
           variant="outline-danger"
