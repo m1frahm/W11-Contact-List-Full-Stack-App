@@ -45,7 +45,7 @@ const MyForm = ({ onSaveContact, editingContact, onUpdateContact }) => {
     return fetch("http://localhost:9000/api/contacts", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newStudent),
+      body: JSON.stringify(newContact),
     })
       .then((response) => {
         return response.json();
@@ -93,9 +93,9 @@ const MyForm = ({ onSaveContact, editingContact, onUpdateContact }) => {
         <input
           type="text"
           id="add-user-name"
-          placeholder="First Name"
+          placeholder="Full Name"
           required
-          value={student.firstname}
+          value={contact.name}
           onChange={handleNameChange}
         />
       </Form.Group>
@@ -114,7 +114,7 @@ const MyForm = ({ onSaveContact, editingContact, onUpdateContact }) => {
         <Form.Label>Phone</Form.Label>
         <input
           type="text"
-          id="add-user-phone" // this might be integer? 
+          id="add-user-phone" // this might be integer?
           placeholder="Phone"
           required
           value={contact.phone}
@@ -124,7 +124,7 @@ const MyForm = ({ onSaveContact, editingContact, onUpdateContact }) => {
       <Form.Group>
         <Form.Label>Show</Form.Label>
         <input
-          type="text" 
+          type="text"
           id="add-user-show"
           placeholder="Show"
           required
@@ -142,9 +142,9 @@ const MyForm = ({ onSaveContact, editingContact, onUpdateContact }) => {
       /> */}
       <Form.Group>
         <Button type="submit" variant="outline-success">
-          {student.id ? "Edit Contact" : "Add Contact"}
+          {contact.id ? "Edit Contact" : "Add Contact"}
         </Button>
-        {student.id ? (
+        {contact.id ? (
           <Button type="button" variant="outline-warning" onClick={clearForm}>
             Cancel
           </Button>

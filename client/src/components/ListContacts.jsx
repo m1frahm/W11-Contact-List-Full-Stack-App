@@ -14,7 +14,7 @@ const ListContacts = () => {
     // A function to fetch the list of contacts that will be load anytime that list change
     fetch("http://localhost:9000/api/contacts")
       .then((response) => response.json())
-      .then((students) => {
+      .then((contacts) => {
         setContacts(contacts);
       });
   };
@@ -57,14 +57,14 @@ const ListContacts = () => {
   return (
     <div className="mybody">
       <div className="list-contact">
-        <h2>Food Network Food Festival Judges Guest List </h2>
+        <h2>Food Network Festival Judges Guest List </h2>
         <ul>
           {contacts.map((contact) => {
             return (
-              <li key={contact.id}>
+              <li key={contact.id}>{contact.name}
                 {" "}
                 <Contact
-                  contacts={contacts}
+                  contact={contact}
                   toDelete={onDelete}
                   toUpdate={onUpdate}
                 />

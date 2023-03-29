@@ -18,6 +18,9 @@ const Contact = ({ contact, toUpdate, toDelete }) => {
         <Card.Title>
           {contact.name} 
         </Card.Title>
+        <Card.Title>
+          {contact.show} 
+        </Card.Title>
         <Button
           variant="outline-danger"
           onClick={() => {
