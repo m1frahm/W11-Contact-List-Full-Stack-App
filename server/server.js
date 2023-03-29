@@ -14,15 +14,15 @@ app.get("/", (req, res) => {
   res.json({ message: "Hey there, this is from My template ExpressJS with React-Vite" });
 });
 
-// // create the get request for students in the endpoint '/api/students'
-// app.get('/api/students', async (req, res) => {
-//     try {
-//         const { rows: students } = await db.query('SELECT * FROM students');
-//         res.send(students);
-//     } catch (e) {
-//         return res.status(400).json({ e });
-//     }
-// });
+// create the get request for contacts in the endpoint '/api/contacts'
+app.get('/api/contacts', async (req, res) => {
+    try {
+        const { rows: contacts } = await db.query('SELECT * FROM contacts');
+        res.send(contacts);
+    } catch (e) {
+        return res.status(400).json({ e });
+    }
+});
 
 // sample w cristina create the get request for students in the endpoint '/api/students'
 app.get("/api/contacts", async (req, res) => {
