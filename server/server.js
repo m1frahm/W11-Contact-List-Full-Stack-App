@@ -40,7 +40,7 @@ app.get("/api/contacts", async (req, res) => {
   }
 });
 
-// create the POST request
+// create the POST request (this way we can add a new contact)
 app.post("/api/contacts", async (req, res) => {
   try {
     const newContact = {
@@ -62,12 +62,12 @@ app.post("/api/contacts", async (req, res) => {
   }
 });
 
-// delete request for students
-app.delete("/api/students/:studentId", async (req, res) => {
+// delete request for contact
+app.delete("/api/students/:contactId", async (req, res) => {
   try {
-    const studentId = req.params.studentId;
-    await db.query("DELETE FROM students WHERE id=$1", [studentId]);
-    console.log("From the delete request-url", studentId);
+    const contactId = req.params.contactId;
+    await db.query("DELETE FROM contacts WHERE id=$1", [contactId]);
+    console.log("From the delete request-url", contactId);
     res.status(200).end();
   } catch (e) {
     console.log(e);
