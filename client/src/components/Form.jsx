@@ -1,32 +1,39 @@
 import React, { useState, useEffect } from 'react'
 import { Button, Form } from "react-bootstrap"
 
-const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
+const MyForm = ({ onSaveContact, editingContact, onUpdateContact }) => {
 
-    // This is the original State with not initial student 
-    const [student, setStudent] = useState(editingStudent || {
-        firstname: "",
-        lastname: "",
-        is_current: false
+    // This is the original State with not initial contact 
+    const [contact, setContact] = useState(editingContact || {
+        name: "",
+        email: "",
+        phone: "",
+        show: ""
     });
 
     //create functions that handle the event of the user typing into the form
+    //think back to KC on this
     const handleNameChange = (event) => {
-        const firstname = event.target.value;
-        setStudent((student) => ({ ...student, firstname }));
+        const name = event.target.value;
+        console.log(name); // testing
+        setContact((contact) => ({ ...contact, name }));
 
     };
 
-    const handleLastnameChange = (event) => {
-        const lastname = event.target.value;
-        setStudent((student) => ({ ...student, lastname }));
-    };
+    const handleEmailChange = (event) => {
+        const email = event.target.value;
+        setContact((contact) => ({ ...contact, email }));
+      };
 
-    const handleCheckChange = (event) => {
-        const is_current = event.target.checked;
-        //console.log(iscurrent);
-        setStudent((student) => ({ ...student, is_current }));
-    };
+      const handlePhoneChange = (event) => {
+        const phone = event.target.value;
+        setContact((contact) => ({ ...contact, phone }));
+      };
+
+      const handleShowChange = (event) => {
+        const phone = event.target.value;
+        setContact((contact) => ({ ...contact, show }));
+      };
 
     const clearForm = () => {
         setStudent({ firstname: "", lastname: "", is_current: false })
