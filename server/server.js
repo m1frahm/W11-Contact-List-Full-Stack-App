@@ -41,7 +41,7 @@ app.get("/api/contacts", async (req, res) => {
 });
 
 // create the POST request
-app.post("/api/students", async (req, res) => {
+app.post("/api/contacts", async (req, res) => {
   try {
     const newStudent = {
       firstname: req.body.firstname,
