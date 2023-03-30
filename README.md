@@ -1,6 +1,8 @@
 # Your First Express and React App with Vite
  ⚡ Create a working full stack app with React and Express in minutes by running your client using Vite, your server using Express, and dumping your db in the template ⚡
 
+ #This is the contact list app
+
 ## Step by Step instructions - To use this project as your start point  🚀  
 ### To create the whole project
 
