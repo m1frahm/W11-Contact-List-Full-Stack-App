@@ -113,7 +113,7 @@ const MyForm = ({ onSaveContact, editingContact, onUpdateContact }) => {
       <Form.Group>
         <Form.Label>Phone</Form.Label>
         <input
-          type="text"
+          type="numbers"
           id="add-user-phone" // this might be integer?
           placeholder="Phone"
           required
