@@ -47,7 +47,7 @@ app.get("/api/contacts", async (req, res) => {
       id: 3,
       name: " Ahmed Alzahabi",
       email: "ahmed@goldenbalance.com",
-      phone: `333 - 333 - 333`,
+      phone: `333 - 333 - 3333`,
       show: "The Golden Balance",
     },
   ];

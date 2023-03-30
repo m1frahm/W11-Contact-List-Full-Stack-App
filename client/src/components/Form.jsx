@@ -89,7 +89,7 @@ const MyForm = ({ onSaveContact, editingContact, onUpdateContact }) => {
   return (
     <Form className="form-students" onSubmit={handleSubmit}>
       <Form.Group>
-        <Form.Label>Full Name</Form.Label>
+        <Form.Label htmlFor="add-user-name">Full Name</Form.Label>
         <input
           type="text"
           id="add-user-name"
